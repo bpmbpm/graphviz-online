@@ -1,0 +1,39 @@
+// Тестовый пример dot-кода с использованием тега image="
+// Изображения загружаются по HTTP-ссылкам с GitHub Pages
+// Этот пример демонстрирует работу ver1/index.html
+
+digraph G {
+  rankdir=TB;
+  node [fontname="Arial", fontsize=11];
+  edge [color="slategray"];
+
+  Ulyanov_Vladimir_Ilyich [shape=box, style="filled", fillcolor="lightsteelblue", color="darkslategray",
+    label="Ленин\nУльянов\nВладимир\nИльич\n1870–1924",
+    image="https://bpmbpm.github.io/family-tree/ver2/pic/Ульянов_Владимир_Ильич.png",
+    fixedsize=true, width=1.1, height=1.9, fontsize=9.9,
+    imagepos=tc, imagescale=false, labelloc=b];
+
+  Ulyanov_Ilya_Nikolaevich [shape=box, style="filled", fillcolor="lightsteelblue", color="darkslategray",
+    label="Ульянов\nИлья\nНиколаевич\n1831–1886",
+    image="https://bpmbpm.github.io/family-tree/ver2/pic/Ульянов_Илья_Николаевич.png",
+    fixedsize=true, width=1.1, height=1.9,
+    imagepos=tc, imagescale=false, labelloc=b];
+
+  Blank_Maria_Alexandrovna [shape=box, style="filled", fillcolor="lightpink", color="darkslategray",
+    label="Ульянова\nБланк\nМария\nАлександровна\n1835–1916",
+    image="https://bpmbpm.github.io/family-tree/ver2/pic/Бланк_Мария_Александровна.png",
+    fixedsize=true, width=1.1, height=1.9, fontsize=9.9,
+    imagepos=tc, imagescale=false, labelloc=b];
+
+  subgraph cluster_marriage_0 {
+    label="25.08 (6.09) 1863";
+    rank=same;
+    style=dashed;
+    color="slategray";
+    Ulyanov_Ilya_Nikolaevich;
+    Blank_Maria_Alexandrovna;
+  }
+
+  Ulyanov_Ilya_Nikolaevich -> Ulyanov_Vladimir_Ilyich;
+  Blank_Maria_Alexandrovna -> Ulyanov_Vladimir_Ilyich;
+}
